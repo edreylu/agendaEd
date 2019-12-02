@@ -1,0 +1,28 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+            <div class="form-group">
+                <input type="text" name="usuario" [(ngModel)]="usuario.usuario" placeholder="Usuario " class="form-control" autofocus>
+            </div>
+            <div class="form-group">
+            <input type="text" name="password" [(ngModel)]="usuario.password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="text" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre" class="form-control">
+                </div>
+            <button class="btn btn-success btn-block" (click)="edit ? actualizaUsuario() : guardaNuevoUsuario()">
+                Guardar
+            </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+        <div class="card card-body text-center">
+            <h3>{{usuario.id}} - {{usuario.usuario == '' ? 'Usuario' : usuario.usuario}}</h3>
+            <p>{{usuario.password == '' ? 'Password' : usuario.password}}</p>
+            <p>{{usuario.nombre == '' ? 'Nombre' : usuario.nombre}}</p>
+            <p>{{usuario.fecha_registro | date: 'dd-MM-yyyy'}}</p>
+        </div>
+</div>

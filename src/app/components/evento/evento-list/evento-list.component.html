@@ -1,0 +1,18 @@
+<div class="col-md-4" *ngFor="let evento of eventos">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{evento.nom_evento}}
+        <button class="btn btn-danger" (click)="eliminaEvento(evento.id)">
+        <i class="fa fa-trash-o">
+        </i>
+        </button>
+        </div>
+        <img [src]="evento.foto == '' ? '/assets/foto.png' : evento.foto" class="card-img-top">
+        <div class="card-body">
+        <p>{{evento.descripcion}}</p>
+        <a [routerLink]="['/evento/edit',evento.id]" class="btn btn-info btn-block">
+            Editar Evento
+        </a>
+        </div>
+    </div>
+    </div>

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <a class="navbar-brand" routerLink="/">AgendaEd</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/evento" routerLinkActive="active" *ngIf="session"><i class="fas fa-candelar-check"></i> Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/evento/add" routerLinkActive="active" *ngIf="session"><i class="fas fa-plus-circle"></i>Agregar Evento</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/usuario" routerLinkActive="active" *ngIf="session"><i class="fas fa-candelar-check"></i> Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/usuario/add" routerLinkActive="active" *ngIf="session"><i class="fas fa-plus-circle"></i>Agregar Usuario</a>
+        </li>
+        
+        <li> <a class="nav-link"  style="float:right" routerLink="login" routerLinkActive="active" *ngIf="!session">Login</a> </li>
+        <li> <a *ngIf="session">
+          BIENVENIDO: {{ usuario[0].usuario }}
+        </a><a class ="nav-link" (click)="logout()" *ngIf="session">Logout</a>  </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+       
+    </div>
+  </nav>

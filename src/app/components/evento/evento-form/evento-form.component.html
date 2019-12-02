@@ -1,0 +1,28 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+            <div class="form-group">
+                <input type="text" name="nomEvento" [(ngModel)]="evento.nom_evento" placeholder="nombre de evento" class="form-control" autofocus>
+            </div>
+            <div class="form-group">
+            <textarea name="descripcion" [(ngModel)]="evento.descripcion" placeholder="Descripcion" rows="2" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                    <input type="url" name="foto" [(ngModel)]="evento.foto" placeholder="Foto" class="form-control">
+            </div>
+            <button class="btn btn-success btn-block" (click)="edit ? actualizaEvento() : guardaNuevoEvento()">
+                Guardar
+            </button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+        <div class="card card-body text-center">
+            <img [src]="evento.foto == '' ? '../assets/noimage.png' : evento.foto" class="card-img-top">
+            <h3>{{evento.id}} - {{evento.nom_evento == '' ? 'Titulo de evento' : evento.nom_evento}}</h3>
+            <p>{{evento.descripcion == '' ? 'Descripcion' : evento.descripcion}}</p>
+            <p>{{evento.fecha_registro | date: 'dd-MM-yyyy'}}</p>
+        </div>
+</div>
